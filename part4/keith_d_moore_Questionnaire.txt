@@ -1,0 +1,51 @@
+Answer the following questions. Include them with your test in a plain text file using the format Your_Name_Questionnaire.txt (or rtf).
+
+Note: "software" might refer to an application, web site, web application, driver, etc.
+
+Please answer both of the following questions:
+
+1. Describe the most difficult project you ever worked on and explain what made it so difficult.
+One of the most difficult projects that I worked on was one that required me to document all the requirements and create detailed design documents up front.  This was done prior
+to any code being written.  This was difficult to do because depending on the technology chosen, some things are much easier to do then others.  Also, when you deliver code often, the 
+customer might even discover what the really need an application to do as opposed to what they thought it should do.  Finding out this earlier in the process helps build a better
+product and wastes less time.
+
+2. Given a specification for a task, how would you go about estimating how long it will take for you to complete the task?
+I would try to compare it to something similar that I might have done in the past.  Also, I would create lower level tasks that would be required to meet
+the task as a whole.  Estimating each one them along the way.  Then add up the estimates.  I would also add in a "fudge" factor based on any other contraints 
+that might play a part in the grand scheme of things.  For example, any other "hoops" that might need to be jumped through(documentation, deployment, infrastructure, tool setup, etc)
+
+Choose four of the following seven:
+
+1. What is a "software defect?" What should and shouldn't be covered by that term? Detail some approaches that will help prevent their occurrence or reduce their severity.
+A software defect is when the software does NOT do what its supposed to do based on requirements or stories.  I have found that unit testing really helps minimize software defects.
+This is useful when developing the software as well as when refactoring, fixing bugs or when future enhancements are made.  Automation of the unit tests helps make sure these tests are 
+run prior to a deployment for example.  Also, other types of automated tests, such as integration tests and functional tests can help minimize defects as well.  For example, tests that 
+cover executing the UI for example or tests that interact with external services or databases.  
+
+2. Do you prefer open-source or proprietary technologies, and why?
+I prefer working with open-source technologies for several reasons. First, there is usually more information regarding the use of open-source technologies.  Communities are formed around 
+these open-source technologies and there is usually lots of blog posts and other information about the technology that is readily available.  Secondly, you can look at the
+code if you need to diagnose a problem.  If necessary, you could even fix an issue and contribute a patch back to the community.  
+
+3. Where do you think most software projects go wrong?
+I think alot of software projects go wrong when they try to use a "big bang" approach.  For example, gathering all the detailed requirements up front.  Or maybe create the entire 
+database model up front and then try to develop to that database and never deliver until months or sometimes years later.
+
+4. What do you think of formal design methodologies?
+I think too much time can be spent on most of them.  I prefer using an Agile or Lean approach.
+
+5. Describe an experience working in a team. What was your role on the team? How did you communicate with other members of the team?
+
+6. What technologies would you choose to develop a high performance, highly scalable web application and why?
+
+7. Describe the most and the least rewarding experiences you've ever had while working on software.
+
+Choose one of the following three:
+
+1. Describe a product (other than software) that you'd like to improve, and describe how you would improve it.
+
+2. What's the latest thing you've learned, or what did you learn last week, or what are you currently learning?
+Lately, I have been learning about big data technologies like MongoDB and CouchDB.
+
+3. Describe something in your life that you haven't yet accomplished but would like to.

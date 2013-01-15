@@ -1,0 +1,126 @@
+ <!DOCTYPE HTML>
+
+<html>
+<head>
+   <title>Art & Logic Programming Challenge</title>
+   <link href="Alpc.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<h1>Art & Logic Programming Challenge</h1>
+<div id="page" lang="en" dir="ltr">
+
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<p class="line867">
+<h2 id="Overview">Overview</h2>
+</p><p class="line862">Thank you for taking the Art &amp; Logic Programming Test. This test is an important part of our hiring process; over the years, we have learned that there's not always a strong correlation between the contents of a candidate's resume and their ability to design and implement code at the level that we demand. The only way to determine how well someone writes code is to ask them to roll up their sleeves and write some. We anticipate that completing this test should take you somewhere between 6 and 10 hours. </p><p class="line874">Completing this test will give you an opportunity to display your abilities on some tasks that are not too different from those that are routinely encountered on Art &amp; Logic projects. It's fairly typical on a project that a developer will be handed a fairly high-level specification for a piece of functionality and be asked to design and implement a clean, elegant, flexible solution to the problem in a short period of time. We also end up needing to jump into projects that are already in progress. Sometimes this means stepping into an existing Art &amp; Logic project, but frequently it means inheriting a pile of broken and undocumented code written by a client (and typically, the original programmer responsible for this code is long gone, so debugging skills and detective work are required).  Please bear in mind while completing this exercise that your goal should not be just to demonstrate your competence. We evaluate many more applicants than we have the capacity to hire; this test is key to identifying the most exceptional. </p><p class="line874">On this test, the requirements have intentionally been left somewhat hazy -- you might want to think of it as a programming Rorschach test; we're very interested to gain some insights into your development habits. One requirement that is not hazy is that we expect all code submitted to follow the guidelines laid out in the Art &amp; Logic Programming Style Guide (available at <a class="http" href="http://www.artlogic.com/styleguide/styleguide.html">http://www.artlogic.com/styleguide/styleguide.html</a>). </p><p class="line874">Your submission to us should include: <ul><li>Completed solution to either Part 1a or 1B </li><li>Completed solutions to parts 2-4 </li><li>Whatever source, documentation, project support files (makefiles, etc.) or other associated materials are required to build your code and understand the approach taken in your solution. </li></ul></p><p class="line874">You may complete parts 1a and 2 in the language(s) of your choice: C++, Python, PHP, Ruby, or Objective-C. </p><p class="line862">Part 1b  should be implemented using HTML, Java<strong></strong>Script and CSS (or using ActionScript/Flex -- check with <a class="mailto" href="mailto:recruiting@artlogic.com">recruiting@artlogic.com</a> first) </p><p class="line874">Parts 3 and 4 are self-explanatory. </p><p class="line862">After completing your solutions, you may submit it to us by completing the form at <a class="http" href="http://www.artlogic.com/careers/talent-entrance.php">http://www.artlogic.com/careers/talent-entrance.php</a> When you post your submission to us, you'll be asked to let us know the amount of time used to complete each part, so please track your time as you go. </p><p class="line867">
+<h2 id="Part_1a:_Fixed_Point_Class">Part 1a: Fixed Point Class</h2>
+</p><p class="line867"><strong>Please complete either this section, or Part 1b, below</strong> </p><p class="line874">Design and implement a class or set of functions to work with the following encoding of a fixed-point number. We often work with client hardware that uses proprietary or unusual protocols or data formats. For this exercise, assume that we are developing software that receives data values from a piece of client-provided hardware in the binary-encoded format described below. The task at hand is to create a class that can correctly encode and decode those values and make them usable by other software. </p><p class="line874">In this instance, a fixed-point number is packed into a 32-bit unsigned integer as follows <pre>   s i i i i i i i   i i i i i i i i   i f f f f f f f   f f f f f f f f</pre></p><p class="line874">where: <ul><li><p class="line891"><em>s</em> : sign bit (1 == negative) </p></li><li class="gap"><p class="line891"><em>i</em> : 16 integer bits </p></li><li class="gap"><p class="line891"><em>f</em> : 15 fraction bits </p></li></ul></p><p class="line874">Examples: <div><table><tbody><tr> <td><p class="line862">Value</p></td>
+<td><p class="line862">Fixed Point encoding</p></td>
+</tr>
+<tr> <td><p class="line862">1.0</p></td>
+<td><p class="line891"><tt>0x00008000</tt></p></td>
+</tr>
+<tr> <td><p class="line862">-1.0</p></td>
+<td><p class="line891"><tt>0x80008000</tt></p></td>
+</tr>
+<tr> <td><p class="line862">2.0</p></td>
+<td><p class="line891"><tt>0x00010000</tt></p></td>
+</tr>
+<tr> <td><p class="line862">-2.5</p></td>
+<td><p class="line891"><tt>0x80014000</tt></p></td>
+</tr>
+<tr> <td><p class="line862">3.14</p></td>
+<td><p class="line891"><tt>0x000191eb</tt></p></td>
+</tr>
+<tr> <td><p class="line862">100.99</p></td>
+<td><p class="line891"><tt>0x00327eb8</tt></p></td>
+</tr>
+</tbody></table></div></p><p class="line874">Your class should support at least the following operations: <ul><li>Create Fixed Point object from floating point value </li><li class="gap">Create Fixed Point object from packed 32-bit value </li><li class="gap"><p class="line862">Idiomatic conversion to string (as <tt>&lt;&lt;optional&nbsp;sign&gt;&gt;&lt;&lt;integer&nbsp;part&gt;&gt;.&lt;&lt;fractional&nbsp;part&gt;&gt;</tt>) For example, an instance of your Fixed Point class initialized from an encoded value of <tt>0x80008000</tt> would be converted to the string "-1.0". </p></li><li class="gap">Convert Fixed Point object to closest floating point value </li></ul></p><p class="line867">
+<h2 id="Part_1b:_Ajax_Web_Page_.28or_Flex_component.29">Part 1b: Ajax Web Page (or Flex component)</h2>
+</p><p class="line874">Create a file 'index.html' that contains either: <ul><li>A single-line text input field named "input" </li><li>A submit button </li><li><p class="line862">An empty &lt;div&gt; labeled "Matches:" </p></li></ul></p><p class="line874">or:  <ul><li>a Flex component that provides the same auto-complete functionality as described elsewhere in this part </li></ul></p><p class="line862">Your solution may also use additional files (images, JavaScript, CSS, etc.), but all assets used in the solution must have been created by you. This question is designed to test programming ability, not design skills, but feel free to apply useful styling to your solution. Your HTML should pass the validation tests at <a class="http" href="http://validator.w3.org/">http://validator.w3.org/</a>. </p><p class="line862">Since we are not allowing the use of any existing JavaScript libraries that would insulate you from differences between browsers, we expect your solution to work correctly on the current version of at least one of Firefox, Safari, Chrome, or Internet Explorer. Please document which browser(s) you tested with. </p><p class="line862">When manipulating the contents of the page, do not use <tt class="backtick">innerHTML</tt> to do so. </p><p class="line862">The application 'AlpcServer' provided as part of this challenge implements a simple word-completer. Assuming that this application is running on your local machine at port 8080, when the URL </p><p class="line867"><a class="http" href="http://localhost:8080/words/a">http://localhost:8080/words/a</a> </p><p class="line874">is accessed, the server will return a list of words it knows starting with that letter and report HTTP status of 200 (OK). Accessing /words/ac will return a list of words beginning with the stem 'ac', and so on. If the word stem parameter is missing or if the server knows no words beginning with that stem, the server will return an HTTP status of 204 (No content), and no data. </p><p class="line874">The edit field on the index.html file must operate in two different modes: <ul><li><p class="line862">Normal Mode operates as a plain edit field; when the control has focus, characters typed are displayed in the control. If the user presses '<tt>^</tt>' as the first thing in the edit box or after whitespace, the control switches into autocomplete mode. The '<tt>^</tt>' character that switches your page into autocomplete mode should not be displayed in the edit field. </p></li><li><p class="line862">Autocomplete Mode captures input from the keyboard and queries the AlpcServer for words starting with letters typed after entering autocomplete mode. For each character typed in autocomplete mode, the following should happen: </p></li><li>The server should be queried asynchronously for matching words </li><li>If one or more matches are returned, the 'Matches' div should be populated with the results, one entry per line, and the edit field should be updated to include the best match (the first match in the list returned from the server) so far.  </li></ul></p><p class="line874">If the user presses the backspace key while in autocomplete mode, your web page should re-display the matches that result from the shorter stem, or if the user backspaces past the first letter entered in autocomplete mode, should return to normal mode. Users should be able to switch between Normal and Autocomplete modes to enter multiple words in the edit field. </p><p class="line874">Autocomplete mode is exited when the user does any of these: <ul><li>enters text that results in zero matches being returned </li><li>hits the Tab key, which accepts the current best match from the completer, completing the word in the edit box </li><li>clicks on one of the words displayed in the 'Matches' div, completing the word in the edit box </li><li>presses space bar </li><li>presses the Submit button </li><li>backspaces past the point where autocomplete mode was triggered </li></ul></p><p class="line874">When Autocomplete mode is exited, any contents in the 'Matches' div are removed. </p><p class="line867">
+<h3 id="AlpcServer.py">AlpcServer.py</h3>
+</p><p class="line874">The test server used for this part of the test is provided as a set of Python source files. The test materials supplied by us should include the following files: <ul><li><p class="line891">AlpcServer.py </p></li><li>Completer.py </li><li>Request.py </li><li>wordTest.txt </li></ul></p><p class="line862">If you do not have Python installed on your system, you can download the current version in the 2.x family for your operating system from <a class="http" href="http://www.python.org">http://www.python.org</a>. The server code used for this test does not run correctly under any of the Python 3.x releases. </p><p class="line874">To launch the server, use the command line </p><p class="line867"><pre>python AlpcServer.py &lt;command line options&gt;</pre></p><p class="line874">The available command line options are: </p><p class="line867"><pre>-h, --help
+     Show command line options and exit.
+-p PORT, --port=PORT
+     Set the server to serve pages on the specified TCP port (default = 8080)
+-r ROOT, --root=ROOT
+     Set the top-level directory to serve pages and other resources from (default = '.')
+-w WORDFILE, --words=WORDFILE
+     Set the dictionary file to use for word autocompletion (default = 'wordTest.txt', supplied with the server source files).</pre></p><p class="line862">Assuming that your index.html and any other resources are located at the path <tt>~/myPath/alpc</tt>, start the server with the command line: </p><p class="line867"><tt>python&nbsp;AlpcServer.py&nbsp;&nbsp;-r&nbsp;~/myPath/alpc</tt> </p><p class="line874">To exit the server, press Ctrl+C. </p><p class="line862">To connect to the server, point your browser at <a class="http" href="http://localhost:8080">http://localhost:8080</a> </p><p class="line867">
+<h2 id="Part_2:_Text_File_Parser">Part 2: Text File Parser</h2>
+</p><p class="line874">Design and implement a class that can parse the following configuration file format: <pre>      [section name 1]
+      key: value
+      key2 : value
+
+      [section name 2]
+      key3: value that is too long for one line, so we wrap onto a second line
+        and continue by using any whitespace character in the first column.</pre></p><p class="line874">Or more specifically: <ul><li>The file is broken up into named sections. The name of each section is enclosed by square brackets, and the opening bracket  must be placed in column 0. </li><li class="gap">The first non-blank line in a file must be a section heading. </li><li class="gap">Each line is terminated by a CR/LF pair (on all platforms). </li><li class="gap">Whitespace between the opening bracket and the first non-whitespace    character of the section name is discarded, as is any whitespace between the    last character of the section name and the closing bracket. The following    section names are all identical: </li></ul></p><p class="line867"><pre>      [Section demonstration]
+      [   Section demonstration]
+      [ Section demonstration     ]</pre><ul><li>Each non blank line of the file inside a section consists of a key and a value, separated by a colon. Whitespace surrounding the colon is discarded, so    the following lines are identical: </li></ul></p><p class="line867"><pre>   key:value
+   key :value
+   key :  value</pre><ul><li>Key names within each section must be unique (but key names may be reused in different sections). </li><li class="gap">Each section name must be unique within the file. </li><li class="gap">Each key must begin in column zero. </li><li class="gap">Long lines may be wrapped by continuing them onto the next line and placing    one or more whitespace characters in column zero. When reading the file in,    the combination CR/LF followed by whitespace is treated as if it were just the    whitespace. Only the value component of a line may be wrapped. </li></ul></p><p class="line874">Your class must support at least the following operations: <ul><li>Create a parser object given a file name. </li><li>Get a string value associated with a given section and key names. </li><li>Get an integer value associated with a given section and key names. </li><li>Get a floating point value associated with a given section and key names. </li><li>Set a string value for a given section and key names, writing the new file    to disk. </li><li>Set an integer value for a given section and key names, writing the new file    to disk. </li><li>Set a floating point value for a given section and key names, writing the new file    to disk. </li></ul></p><p class="line874">You may use the following test data for your development: <pre>   [header]
+   project: Programming Test
+   budget : 4.5
+   accessed :205
+
+   [meta data]
+   description : This is a tediously long description of the Art &amp; Logic
+    programming test that you are taking. Tedious isn't the right word, but
+    it's the first word that comes to mind.
+
+   correction text: I meant 'moderately,' not 'tediously,' above.
+
+   [ trailer ]
+   budget:all out of budget.</pre></p><p class="line867">
+<h2 id="Part_3:_Debugging">Part 3: Debugging</h2>
+</p><p class="line874">Fix the following piece of broken code. When executed, it should convert the buffer parameter (using the provided data -- changing the contents of the input buffer doesn't count as fixing a bug) into the string "Art&amp;Logic", but it does not. This example code is in C/C++, but the problems it has are also problems in all the other ALGOL-derived languages that we work with. </p><p class="line867"><pre>   #define kSpace 032
+
+   char buf[] = {0x42, 0x73, 0x75, 0x27, 0x13, 0x1C, 0x68, 0x1B, 0x64};
+
+   #define mBufferLen(buf) (sizeof(buf) / sizeof(buf[0]))
+
+
+   /*
+    * convert the contents of 'buf' in place so that they are decoded. The
+    * above buffer should convert to the ASCII string "Art&amp;Logic" (but it doesn't as
+    * presented here....)
+    */
+   void Convert(char* buffer)
+   {
+      int i;
+
+      for (i = 0; i &lt;= mBufferLen(buffer); ++i)
+      {
+         if (buffer[i] &gt; kSpace)
+         {
+            buffer[i] -= 1;
+         }
+         else
+         {
+            buffer[i] = buffer[i] &lt;&lt; 2 + 4 - i;
+         }
+      }
+   }
+
+   int main(void)
+   {
+      int i;
+      const char kTarget[] = "Art&amp;Logic";
+
+      Convert(buf);
+      for (i = 0; i &lt; kBufferLen; ++i)
+      {
+         assert(kTarget[i] == buffer[i]);
+      }
+   }</pre></p><p class="line867">
+<h2 id="Part_4:_Questionnaire">Part 4: Questionnaire</h2>
+</p><p class="line874">Answer the following questions. Include them with your test in a plain text file using the format <tt>Your_Name_Questionnaire.txt</tt> (or rtf). </p><p class="line874">Note: "software" might refer to an application, web site, web application, driver, etc. </p><p class="line867"><strong>Please answer both of the following questions:</strong> </p><p class="line874">1. Describe the most difficult project you ever worked on and explain    what made it so difficult. </p><p class="line874">2. Given a specification for a task,    how would you go about estimating how long it will take for you to    complete the task? </p><p class="line867"><strong>Choose four of the following seven:</strong> </p><p class="line874">1. What is a "software defect?" What should and shouldn't be covered by    that term? Detail some approaches that will help prevent their occurrence   or reduce their severity. </p><p class="line874">2. Do you prefer open-source or proprietary technologies, and why? </p><p class="line874">3. Where do you think most software projects go wrong? </p><p class="line874">4. What do you think of formal design methodologies? </p><p class="line874">5. Describe an experience working in a team. What was your role on the    team? How did you communicate with other members of the team? </p><p class="line874">6. What technologies would you choose to develop a high performance,   highly scalable web application and why? </p><p class="line874">7. Describe the most and the least rewarding experiences you've ever   had while working on software. </p><p class="line867"><strong>Choose one of the following three:</strong> </p><p class="line874">1. Describe a product (other than software) that you'd like to improve,   and describe how you would improve it. </p><p class="line874">2. What's the latest thing you've learned, or what did you learn last   week, or what are you currently learning? </p><p class="line874">3. Describe something in your life that you haven't yet accomplished   but would like to. </p><p class="line874"> <a href="categoryrecruiting.html">CategoryRecruiting</a> <span class="anchor" id="bottom"></span></p></div><div class="visualClear"></div>
+<div id="pagebottom"></div>
+</div>
+<br /><hr />
+<p class="footer"><strong>Art & Logic Programming Challenge</strong><br />
+Copyright &copy; 2010 Art & Logic Software Development, Inc. 
+<a href="http://www.artlogic.com">www.artlogic.com</a></p>
+<div class="lastEdit footer">Page last edited: 2012-05-23 16:22:21</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+This application was constructed using 1.9.3-p362
+
+The application consists of AParser, ADocument and ASection.
+The AParser can be used to create ADocument which can contain zero or more ASection objects.
+The ASection object holds on to zero or more key value pairs
+
+Here are same sample usage patterns.  You can also look at the unit tests to see more.  
+You can run: rake test to execute the tests.  
+Some input and output data are kept in the test/data folder
+
+document = AParser.createDocumentFrom("input.txt")
+document.write("output.txt")
+
+document.getValue(<section_name>, <key>)
+
+document.getStringValue(<section_name>, <key>)
+document.getIntegerValue(<section_name>, <key>)
+document.getFloatValue(<section_name>, <key>)
+
+# value can be string, integer, float, etc
+document.setValue(<section_name>, <key>, <value>)
